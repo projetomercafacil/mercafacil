@@ -1,0 +1,346 @@
+/* Reset e fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* Card central */
+.auth-card {
+  background: #fff;
+  padding: 35px 28px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* Título */
+.auth-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d32f2f; /* Vermelho destaque */
+  margin-bottom: 25px;
+}
+
+/* Alerts */
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.alert.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.alert.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+/* Inputs */
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.auth-form input:focus {
+  border: 1px solid #d32f2f;
+}
+
+/* Botão */
+.btn.primary {
+  width: 100%;
+  padding: 14px;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn.primary:hover {
+  background: #b71c1c;
+}
+
+/* Links abaixo */
+.auth-links {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-links a {
+  color: #1976d2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.auth-links a:hover {
+  color: #0d47a1;
+}
+
+.auth-links span {
+  margin: 0 6px;
+  color: #999;
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body.page {
+  background: #fffdf9;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal */
+.container {
+  flex: 1;
+  padding: 16px;
+  margin-bottom: 70px; /* espaço para a bottom-nav */
+}
+
+/* Saudação do usuário */
+.user-greeting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #c4f0c2; /* verde clarinho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.user-info h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.user-info span {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Botões principais */
+.dashboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.action-primary {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.action-secondary {
+  background: #fff4e5;
+  color: #b23c17;
+}
+
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+/* Loja */
+.store-info {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.store-info a {
+  color: #d32f2f;
+  font-size: 13px;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+/* Ofertas */
+.offers h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.offer-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.offer-card img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.offer-text {
+  font-size: 14px;
+}
+
+.offer-text small {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Botão extra */
+.extra-action {
+  background: #fff4e5;
+  color: #d32f2f;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Barra inferior */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #d32f2f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.bottom-nav a {
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.bottom-nav a.active {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+/* Modal de pagamento */
+.pay-modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:2000;padding:16px}
+.pay-dialog{width:100%;max-width:520px;background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.25);padding:22px 22px 18px;position:relative}
+.pay-close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:22px;cursor:pointer;line-height:1}
+.pay-title{margin:0 0 14px;font-size:22px}
+.pay-label{display:block;font-size:13px;color:#555;margin:10px 0 6px}
+.pay-input{width:100%;padding:9px 10px;border:1px solid #e3e3e3;border-radius:8px;font-size:14px;outline:none}
+.pay-input:focus{border-color:#c00;box-shadow:0 0 0 3px rgba(204,0,0,.12)}
+.pay-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pay-card-fields{margin-top:4px}
+.pay-submit{margin-top:14px;width:100%}
+.pay-msg{margin-top:8px;font-size:13px}
+
+/* Modal Carrinho */
+.cart-modal{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.55);
+  display:none; align-items:center; justify-content:center;
+  z-index:1000;
+}
+.cart-content{
+  background:#fff; width:420px; max-width:90vw;
+  max-height:80vh; overflow:auto;
+  border-radius:12px; padding:20px; position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  animation:cartIn .2s ease-out;
+}
+.cart-content h2{margin:0 0 10px}
+.cart-content .close{
+  position:absolute; top:10px; right:14px;
+  font-size:22px; cursor:pointer; color:#666;
+}
+.cart-item{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:8px 0; border-bottom:1px solid #eee;
+}
+.cart-item .remove{margin-left:10px; text-decoration:none}
+.cart-content .btn{
+  display:inline-block; text-align:center; background:#d32f2f; color:#fff;
+  padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:600;
+}
+@keyframes cartIn{from{opacity:0; transform:translateY(-10px)} to{opacity:1; transform:translateY(0)}}
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.cart-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
