@@ -24,16 +24,7 @@
 
 
 <div class="layout">
-  <aside class="sidebar">
-    <div class="sidebar-brand">MercaFácil</div>
-    <nav>
-      <a href="<?= BASE_URL ?>router.php?page=dashboard">Dashboard</a>
-      <a href="<?= BASE_URL ?>router.php?page=products">Produtos</a>
-      <a href="<?= BASE_URL ?>router.php?page=favorites" class="active">Favoritos</a>
-      <a href="<?= BASE_URL ?>router.php?page=profile">Perfil</a>
-      <a href="<?= BASE_URL ?>logout.php" class="danger">Sair</a>
-    </nav>
-  </aside>
+
   <main class="content">
     <h2>Seus favoritos</h2>
     <?php if(!empty($items)): ?>
@@ -53,4 +44,4 @@
     <?php endif; ?>
   </main>
 </div>
-<?php include __DIR__ . '/../partials/footer.php'; ?>
+<?php include __DIR__ . '/../layout/footer.php'; ?>

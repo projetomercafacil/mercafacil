@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS products (
   name VARCHAR(140) NOT NULL,
   category VARCHAR(60) NOT NULL,
   price DECIMAL(10,2) NOT NULL,
-  code VARCHAR(64) UNIQUE,         -- código de barras/QR
+  code VARCHAR(64) UNIQUE,        
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

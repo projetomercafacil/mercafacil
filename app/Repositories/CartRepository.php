@@ -13,18 +13,29 @@ class CartRepository
         }
     }
 
-    public function all(): array
-    {
-        $items = $_SESSION['cart'];
-        $total = array_reduce($items, function($sum, $item) {
-            return $sum + ($item['price'] * $item['qty']);
-        }, 0);
+public function all(): array
+{
+    $items = $_SESSION['cart'] ?? [];
 
+    // Normaliza a estrutura para o formato esperado no JS
+    $normalized = array_map(function($item) {
+        $subtotal = $item['price'] * $item['qty'];
         return [
-            'items' => $items,
-            'total' => $total,
+            'id' => $item['id'],
+            'name' => $item['name'],
+            'price' => (float) $item['price'],
+            'quantity' => (int) $item['qty'],  // JS espera "quantity"
+            'subtotal' => $subtotal,           // JS espera "subtotal"
         ];
-    }
+    }, $items);
+
+    $total = array_sum(array_column($normalized, 'subtotal'));
+
+    return [
+        'items' => $normalized,
+        'total' => $total,
+    ];
+}
 
     public function add(array $product, int $qty = 1): void
     {

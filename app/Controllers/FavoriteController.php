@@ -9,8 +9,8 @@ class FavoriteController {
         $repo = new ShopRepository();
         $items = $userId ? $repo->favoritesOf($userId) : [];
 
-        require __DIR__ . '/../views/partials/header.php';
+        
         require __DIR__ . '/../views/favorites/index.php';
-        require __DIR__ . '/../views/partials/footer.php';
+        require __DIR__ . '/../views/layout/footer.php';
     }
 }

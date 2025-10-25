@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const closeCartBtn = document.getElementById("closeCartBtn");
 
   function loadCart() {
-    fetch("<?= BASE_URL ?>router.php?page=cart&ajax=1")
+    fetch("<?= BASE_URL ?>/router.php?page=cart&ajax=1")
       .then(res => res.json())
       .then(data => {
         if (!data.items || data.items.length === 0) {
@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         let html = "<ul style='list-style:none; padding:0'>";
-        data.items.forEach(item => {
-          html += `<li>${item.name} x ${item.qty} - R$ ${(item.price * item.qty).toFixed(2)}</li>`;
-        });
-        html += "</ul>";
+ data.items.forEach(item => {
+  html += `<li>${item.name} x ${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}</li>`;
+});
+html += "</ul>";
 
-        cartItems.innerHTML = html;
-        cartTotal.textContent = data.total.toFixed(2);
+cartItems.innerHTML = html;
+cartTotal.textContent = data.total.toFixed(2);
       })
       .catch(err => {
         cartItems.innerHTML = "<p>Erro ao carregar carrinho.</p>";
