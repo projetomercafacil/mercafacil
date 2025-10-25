@@ -41,3 +41,82 @@ Pedro Henrique: 12300985
 ## Notas
 - Senhas armazenadas com password_hash()
 - Uso mínimo de sessão e sanitização de entrada
+
+
+## Design Patterns Aplicados na Camada de Domínio
+🔹 Singleton
+
+Uso: Conexão única ao banco de dados (app/Database/Database.php).
+
+Justificativa: Evita múltiplas instâncias de conexão PDO e reduz o consumo de recursos.
+Centraliza a criação e o gerenciamento da conexão com o banco.
+
+UML Simplificado:
+
++-------------------+
+|     Database      |
++-------------------+
+| - connection: PDO |
++-------------------+
+| + connect(): PDO  |
++-------------------+
+        ▲
+        | (única instância compartilhada)
+
+🔹 Repository
+
+Uso: Implementado nos arquivos app/Repositories/*.php (ex: ProductRepository.php, UserRepository.php, CartRepository.php).
+
+Justificativa: Encapsula a lógica de acesso e manipulação de dados, separando as regras de negócio da persistência.
+Facilita manutenção, testes e substituição da fonte de dados (ex: MySQL → API).
+
+UML Simplificado:
+
++---------------------+        +-------------------+
+|  ProductRepository  |        |     Database      |
++---------------------+        +-------------------+
+| + findAll()         |<>----->| + connect()       |
+| + findById(id)      |        +-------------------+
+| + save(product)     |
++---------------------+
+
+🔹 Domain Model
+
+Uso: Classes em app/Models/ (ex: Product, User, Cart, Supermarket).
+
+Justificativa: Representam entidades do domínio com seus atributos e comportamentos próprios.
+Aplicam o padrão Domain Model (dados + regras de negócio na mesma classe).
+
+UML Simplificado:
+
++-------------------+
+|     Product       |
++-------------------+
+| - id              |
+| - name            |
+| - price           |
++-------------------+
+| + getPrice()      |
+| + applyDiscount() |
++-------------------+
+
+🔹 MVC (Model–View–Controller)
+
+Uso: Estrutura do sistema (app/Controllers/, app/Models/, app/views/).
+
+Justificativa: Separa as responsabilidades da aplicação:
+
+Controller: processa requisições e coordena ações.
+
+Model: trata dados e lógica de negócio.
+
+View: exibe a interface ao usuário.
+Melhora a manutenibilidade e organização do código.
+
+UML Simplificado:
+
++-------------+     +-------------+     +-------------+
+|  Controller | --> |   Model     | --> |    View     |
+| (ex: Product|     | (ex: Product|     | (HTML/PHP)  |
+| Controller) |     | Model)      |     |             |
++-------------+     +-------------+     +-------------+
